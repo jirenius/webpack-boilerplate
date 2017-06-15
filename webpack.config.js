@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const webpack = require('webpack');
 const path = require('path');
+const ENV = process.env.NODE_ENV;
 
 const config = {
   context: path.resolve(__dirname, 'src'),
@@ -38,18 +39,25 @@ const config = {
   },
 
   devServer: {
-    port: 4000, //Tell dev-server which port to run
-    open: true, // to open the local server in browser
+    port: 4000,   //Tell dev-server which port to run
+    open: true,   // to open the local server in browser
     contentBase: path.resolve(__dirname,'src'),
   },
   plugins: [
-  new ExtractTextPlugin("css/styles.css"),
-  new HtmlWebpackPlugin({
-    title: "Webpack Boilerplate 🤖", //Remove or change to change title in index.html
-    template: 'index.ejs'
-  }),
-  new DashboardPlugin()
+    new ExtractTextPlugin("css/styles.css"),
+    new HtmlWebpackPlugin({
+      title: "Webpack Boilerplate 🤖", //Remove or change to change title in index.html
+      template: 'index.ejs'
+    }),
+    new DashboardPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(ENV)
+    })
   ]
 };
+
+if (ENV === 'production') {
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
 
 module.exports = config;
