@@ -1,6 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -49,5 +50,9 @@ const config = {
     })
   ]
 };
+
+if(process.env.NODE_ENV === 'development'){
+  config.plugins.push(new DashboardPlugin());
+}
 
 module.exports = config;
