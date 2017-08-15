@@ -26,13 +26,13 @@ yarn
 To run development server on localhost (you can choose port of your choice in the config-file)
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 To build:
 
 ```bash
-npm run build
+yarn build
 ```
 
 
