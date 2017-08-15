@@ -1,12 +1,2 @@
-html {
-  height: 100%; }
-
-body {
-  height: 100%;
-  background-color: #D7816A;
-  color: #fff;
-  font: 150%/1.5 'Fira Code', monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 5px 5px 0px #B06A57; }
+body{background-color:#d7816a;color:#fff;font:100%/1.5 Fira Code,monospace;display:flex;justify-content:center;align-items:center;text-shadow:3px 3px 0 #b06a57}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjc3Mvc3R5bGVzLmNzcyIsInNvdXJjZVJvb3QiOiIifQ==*/
