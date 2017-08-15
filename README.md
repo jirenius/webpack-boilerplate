@@ -6,8 +6,6 @@ Webpack config that uses `sass` and `babel`.
 
 In `app.js` I have imported `main.scss` so webpack will convert the scss-files and output them as `styles.css` in `dist`-folder. As long as you don't delete that line you should just be able to write `scss` and `js` as usual.
 
-* [Exploring ES6 - Modules](http://exploringjs.com/es6/ch_modules.html) 
-
 ## Installation
 
 Install all dependencies using npm:

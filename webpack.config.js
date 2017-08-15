@@ -41,7 +41,7 @@ const config = {
   devServer: {
     port: 4000,   //Tell dev-server which port to run
     open: true,   // to open the local server in browser
-    contentBase: path.resolve(__dirname,'src'),
+    contentBase: path.resolve(__dirname,'dist') //serve from 'dist' folder
   },
   plugins: [
     new ExtractTextPlugin("css/styles.css"),
@@ -49,7 +49,7 @@ const config = {
       title: "Webpack Boilerplate 🤖", //Remove or change to change title in index.html
       template: 'index.ejs'
     }),
-    new DashboardPlugin(),
+    new DashboardPlugin(), //futuristic dashboard from the future
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(ENV)
     })
