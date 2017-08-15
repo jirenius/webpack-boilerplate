@@ -1,6 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
@@ -12,7 +11,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js',
+    filename: '[name].bundle.js',
   },
   module: {
     rules: [
@@ -47,8 +46,7 @@ const config = {
     new HtmlWebpackPlugin({
       title: "Webpack Boilerplate 🤖", //Remove or change to change title in index.html
       template: 'index.ejs'
-    }),
-    new DashboardPlugin() //futuristic dashboard from the future
+    })
   ]
 };
 
